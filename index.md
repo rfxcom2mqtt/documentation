@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: book
-heroImage: https://raw.githubusercontent.com/sguernion/rfxcom2mqtt/main/rfxcom.png
+heroImage: https://raw.githubusercontent.com/rfxcom2mqtt/rfxcom2mqtt/main/rfxcom.png
 heroText: Rfxcom2mqtt Documentation
 heroFullScreen: true
 tagline: Rfxcom to MQTT bridge

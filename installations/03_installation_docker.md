@@ -3,7 +3,7 @@ headerDepth: 2
 ---
 
 # Docker
-It is possible to run Rfxcom2MQTT in a Docker container using the [Rfxcom2MQTT Docker image](https://hub.docker.com/r/sguernion/rfxcom2mqtt/).
+It is possible to run Rfxcom2MQTT in a Docker container using the [Rfxcom2MQTT Docker image](https://hub.docker.com/r/rfxcom2mqtt/rfxcom2mqtt/).
 
 This image support the following architectures: `amd64`, `arm/v7`.
 
@@ -11,7 +11,7 @@ This image support the following architectures: `amd64`, `arm/v7`.
 Navigate to the directory where you will store the Rfxcom2MQTT data and execute the following command:
 
 ```bash
-wget https://raw.githubusercontent.com/sguernion/rfxcom2mqtt/main/config/config.yaml -P data
+wget https://raw.githubusercontent.com/rfxcom2mqtt/rfxcom2mqtt/main/config/config.yaml -P data
 ```
 
 Now configure the MQTT server and adapter location as explained [here](./configuration/README.md).
@@ -27,7 +27,7 @@ $ docker run \
    --device=/dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1XR56A5-if00-port0:/dev/ttyACM0 \
    -v $(pwd)/data:/app/data \
    -e TZ=Europe/Amsterdam \
-   sguernion/rfxcom2mqtt
+   rfxcom2mqtt/rfxcom2mqtt
 ```
 
 **Parameters explanation:**  
@@ -45,7 +45,7 @@ of the `docker0` bridge to establish the connection: `server: mqtt://172.17.0.1`
 ## Updating
 To update to the latest Docker image:
 ```bash
-docker pull sguernion/rfxcom2mqtt:latest
+docker pull rfxcom2mqtt/rfxcom2mqtt:latest
 docker rm -f rfxcom2mqtt
 # Now run the container again with the instructions above
 ```
@@ -64,7 +64,7 @@ version: '3.8'
 services:
   rfxcom2mqtt:
     container_name: rfxcom2mqtt
-    image: sguernion/rfxcom2mqtt
+    image: rfxcom2mqtt/rfxcom2mqtt
     restart: unless-stopped
     volumes:
       - ./data:/app/data
