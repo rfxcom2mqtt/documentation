@@ -22,6 +22,10 @@ export const sidebar: SidebarConfig = {
       link: '/installations',
       children: [
         {
+          text: 'Home Assistant addon',
+          link: '/installations/02_ha_addon.md',
+        },
+        {
           text: 'Docker',
           link: '/installations/03_installation_docker.md',
         }
@@ -43,6 +47,7 @@ export const sidebar: SidebarConfig = {
       link: '/configuration',
       children: [
         '/configuration/homeassistant.md',
+        '/configuration/frontend.md',
       ]
     }
   ],
