@@ -1,7 +1,7 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
+import { sidebarConfig } from 'vuepress-theme-hope'
 import { getFiles } from "./navbar";
 
-export const sidebar: SidebarConfig = {
+export const sidebar = sidebarConfig({
   '/': [
     {
       text: 'Getting started',
@@ -49,6 +49,14 @@ export const sidebar: SidebarConfig = {
         '/configuration/homeassistant.md',
         '/configuration/frontend.md',
       ]
+    },
+    {
+      text: 'Supported Devices',
+      icon: 'fa-solid fa-microchip',
+      link: '/supported-devices',
+      children: [
+        '/supported-devices/README.md',
+      ]
     }
   ],
-};
+});

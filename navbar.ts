@@ -1,4 +1,4 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
+import { navbarConfig } from 'vuepress-theme-hope'
 import { resolve } from 'path';
 import { readdirSync } from 'fs';
 
@@ -9,15 +9,30 @@ export function getFiles(dir: string) {
     .map(file => `/${ dir }/${ file }`);
 }
 
-export const navbar: NavbarConfig = [
+export const navbar = navbarConfig([
       {
         text: 'Getting started',
         icon: 'fa-solid fa-circle-arrow-right',
         link: 'getting-started/',
       },
       {
-        text: 'Config',
-        icon: 'gears',
+        text: 'Installation',
+        icon: 'fa-solid fa-cloud-arrow-down',
+        link: 'installations/',
+      },
+      {
+        text: 'Configuration',
+        icon: 'fa-solid fa-gears',
         link: 'configuration/'
+      },
+      {
+        text: 'Usage',
+        icon: 'fa-solid fa-sliders',
+        link: 'usage/'
+      },
+      {
+        text: 'Supported Devices',
+        icon: 'fa-solid fa-microchip',
+        link: 'supported-devices/'
       }
-]
+])
